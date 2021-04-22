@@ -4,7 +4,7 @@ import useChat from '../useChat';
 
 const ChatRoom = (props) => {
     const { roomId } = props.match.params;
-    const { messages, sendMessages } = useChat(roomId);
+    const { messages, sendMessage } = useChat(roomId);
     const [newMessage, setNewMessage] = React.useState('');
 
     const handleNewMessageChange = (event) => {
@@ -12,7 +12,7 @@ const ChatRoom = (props) => {
     };
 
     const handleSendMessage = () => {
-        sendMessages(newMessage);
+        sendMessage(newMessage);
         setNewMessage('');
     };
 
